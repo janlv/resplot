@@ -38,7 +38,7 @@ install.bat
 
 To **activate** the environment:
 ```bash
-source .venv_<project_name>/bin/activate
+source .venv_resplot/bin/activate
 ```
 
 To **deactivate**, run:
@@ -52,7 +52,7 @@ deactivate
 
 To **activate** the environment:
 ```bat
-call .venv_<project_name>\Scripts\activate.bat
+call .venv_resplot\Scripts\activate.bat
 ```
 
 To **deactivate**, run:
@@ -64,5 +64,5 @@ deactivate
 
 ## Notes
 
-- The virtual environment will be named `.venv_<project_name>`, where `<project_name>` is read from your `pyproject.toml`.
+- The virtual environment will be named `.venv_resplot`, where `resplot` is read from your `pyproject.toml`.
 - If `requirements.txt` is present, it will be used to install additional dependencies (e.g., GitHub packages).
