@@ -1,12 +1,12 @@
 # Plot reservoir data with pyvista
 
-# Project Installation Guide
+## Project Installation Guide
 
 This project includes installation scripts that create a virtual environment and install all necessary dependencies.
 
 ---
 
-## Installation (Linux/macOS)
+### Installation (Linux/macOS)
 
 1. Make the script executable:
 ```bash
@@ -20,7 +20,7 @@ chmod +x install.sh
 
 ---
 
-## Installation (Windows)
+### Installation (Windows)
 
 1. Open a terminal (e.g., Command Prompt or PowerShell)
 
