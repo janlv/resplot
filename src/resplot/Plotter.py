@@ -1,10 +1,10 @@
-from itertools import repeat, islice
+from itertools import chain, repeat, islice
 from time import sleep
 from threading import Thread
 from numpy import zeros, array as nparray, mean as npmean
 from numpy.linalg import norm as npnorm
-from IORlib.ECL import EGRID_file, IX_input, UNRST_file, RFT_file
-from IORlib.utils import any_cell_in_box, flatten
+from ECLlib import EGRID_file, IX_input, UNRST_file, RFT_file
+#from IORlib.utils import any_cell_in_box, flatten
 from pyvista import PolyData, Label, Arrow, Sphere, Cylinder
 from pyvistaqt import BackgroundPlotter
 
@@ -236,3 +236,27 @@ class Plotter():                                                            # Pl
         if self.datestring:
             self.datestring.SetVisibility(False)
         self.datestring = self.plotter.add_text(str(date).split()[0], font_size=size)
+
+
+
+
+#////////////////////////////////////////////////////////////////////////////////////
+#                                Utility functions                               
+#////////////////////////////////////////////////////////////////////////////////////
+
+#--------------------------------------------------------------------------------
+def any_cell_in_box(cells, box):
+#--------------------------------------------------------------------------------
+    """
+    Return True if any of the cells given by ((i1, j1, k1), (i2, j2, k2)) is inside 
+    the box given by ((i_min, i_max), (j_min, j_max), (k_min, k_max))
+    """
+    for cell in cells:
+        if all(box[n][0] <= cell[n] < box[n][1] for n in range(3)):
+            return True
+    return False
+
+#-----------------------------------------------------------------------
+def flatten(list_of_lists): # From Itertools Recipes at docs.python.org
+#-----------------------------------------------------------------------
+    return chain.from_iterable(list_of_lists)
