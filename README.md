@@ -1,5 +1,4 @@
-# resplot
-Using pyvista to plot reservoir data
+# Plot reservoir data with pyvista
 
 # Project Installation Guide
 
@@ -59,10 +58,3 @@ To **deactivate**, run:
 ```bat
 deactivate
 ```
-
----
-
-## Notes
-
-- The virtual environment will be named `.venv_resplot`, where `resplot` is read from your `pyproject.toml`.
-- If `requirements.txt` is present, it will be used to install additional dependencies (e.g., GitHub packages).
